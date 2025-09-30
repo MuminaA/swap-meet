@@ -1,3 +1,5 @@
+
+
 class Vendor:
 # WAVE 1
     def __init__(self, inventory=None):
@@ -22,3 +24,13 @@ class Vendor:
             index = self.inventory.index(item)
             removed_item = self.inventory.pop(index)
             return removed_item
+        
+# WAVE 2 
+    def get_by_id(self, id):
+        for item in self.inventory:
+            # check if the item id match with a given id
+            if item.id == id:
+                return item
+        # no matching item in the inventory 
+        return None
+
