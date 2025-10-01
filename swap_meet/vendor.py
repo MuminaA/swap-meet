@@ -52,8 +52,6 @@ class Vendor:
             self.inventory.append(their_item)
             return True
 
-
-
 # WAVE 4
     def swap_first_item(self, other_vendor):
         # if either inventory is empty, return false
@@ -65,9 +63,5 @@ class Vendor:
         other_first_item = other_vendor.inventory[0]
 
         # call the function from WAVE 3
-        # 
         self.swap_items(other_vendor, my_first_item, other_first_item)
         return True
-
-
-# WAVE 5
