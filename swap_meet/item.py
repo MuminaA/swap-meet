@@ -1,6 +1,5 @@
 import uuid
 
-
 # WAVE 2
 class Item:
     # default id to none to start
@@ -14,4 +13,8 @@ class Item:
 
     def get_category(self):
         # we want to see this override in WAVE 5
-        return "Item"  
+        return "Item"
+
+# WAVE 3
+    def __str__(self):
+        return (f"An object of type Item with id {self.id}.")
