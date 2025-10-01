@@ -13,5 +13,5 @@ class Item:
             self.id = id
 
     def get_category(self):
-        # we want to see this override in WAVE 5
+        # we want to see this override in WAVE 5*
         return "Item"  
