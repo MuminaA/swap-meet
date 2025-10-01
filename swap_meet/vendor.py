@@ -13,7 +13,7 @@ class Vendor:
         # append the item to the inventory and return item
         self.inventory.append(item)
         return item
-
+    # remove method
     def remove(self, item):
         # check if item is not in inventory rhen return False
         if item not in self.inventory:
@@ -35,15 +35,23 @@ class Vendor:
         return None
 
 # WAVE 3
+    # Swapping items method
     def swap_items(self, other_vendor, my_item, their_item):
         # if vendors inventory doesn't contain 'my_item' or friends inventory dosent contain 'their_item then return False
+        # also if list empty return false
         if my_item not in self.inventory or their_item not in other_vendor.inventory:
-            print('item not avaliable')
             return False
         else:
-            # print('both items exist')
-            # removes `my_item` from this `Vendor`'s inventory, and adds it to the friend's inventory
-            # removes `their_item` from the other `Vendor`'s inventory, and adds it to this `Vendor`'s inventory
+            # remove my_item from my inventory
+            index = self.inventory.index(my_item)
+            removed_item = self.inventory.pop(index)
+            # add my_item to friends inventory
+            other_vendor.inventory.append(my_item)
+            # remove their_item from friends inventory
+            index = other_vendor.inventory.index(their_item)
+            removed_item = other_vendor.inventory.pop(index)
+            # add their_item to my inventory
+            self.inventory.append(their_item)
             return True
 
 
