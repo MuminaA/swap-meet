@@ -4,7 +4,6 @@ import uuid
 class Item:
     # default id to none to start
     def __init__(self, id=None, condition=0):
-    def __init__(self, id=None, condition = 0):
         if id is None:
             # create large unique numbers and make it an interger
             self.id = uuid.uuid4().int
@@ -27,4 +26,4 @@ class Item:
     
 # WAVE 5 
     def condition_description(self):
-        
+        pass
