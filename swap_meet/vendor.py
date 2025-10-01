@@ -1,5 +1,3 @@
-
-
 class Vendor:
 # WAVE 1
     def __init__(self, inventory=None):
