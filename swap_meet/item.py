@@ -24,7 +24,7 @@ class Item:
 # WAVE 5
     def condition_description(self):
         # dict of conditions
-        condition_of_cloth = {
+        condition_of_item = {
             0: 'brand new',
             1: 'barely touched',
             2: 'lightly loved',
@@ -33,4 +33,4 @@ class Item:
             5: 'vintage survivor',
         }
         # Check if self.condition is one of the keys in dic then return
-        return condition_of_cloth.get(self.condition, 'Unknown condition')
+        return condition_of_item.get(self.condition, 'Unknown condition')

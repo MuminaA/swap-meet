@@ -6,6 +6,8 @@ class Vendor:
             inventory = []
         # attribute (allows us to access inventory later)
         self.inventory = inventory
+
+
     # add method
     def add(self, item):
         # append the item to the inventory and return item
@@ -65,3 +67,54 @@ class Vendor:
         # call the function from WAVE 3
         self.swap_items(other_vendor, my_first_item, other_first_item)
         return True
+    
+
+# WAVE 6
+# this is being override from item to clothing or decor or eletronic
+# go through items of Vendor
+# check if the category matached the category we are looking for
+
+    def get_by_category(self, category):
+        list_of_objects = []
+        for item in self.inventory:
+            if item.get_category() == category:
+                list_of_objects.append(item)
+        return list_of_objects
+
+# get the best condition item in the list
+    def get_best_by_category(self, category):
+        best_item = None
+        # start with a condition lower than 0
+        best_condition = -1
+        # loop through items of vendor
+        for item in self.inventory:
+            # if the category matched, then we compare conditions
+            if item.get_category() == category:
+                if item.condition > best_condition:
+                    best_condition = item.condition
+                    best_item = item
+        return best_item
+
+
+
+    def swap_best_by_category(self, other_vendor, my_priority, their_priority):
+        # access vendor's list to get the best item in the category
+        # which is the item the other vendor wants
+        # used the get_best_by_category function
+        they_want_the_best_item_in_my_inventory = self.get_best_by_category(their_priority)
+        # access the other vendor's list to get the best item in the category
+        # which is the item the vendor wants
+        i_want_th_best_item_in_their_inventory =  other_vendor.get_best_by_category(my_priority)
+
+
+        if they_want_the_best_item_in_my_inventory is None or i_want_th_best_item_in_their_inventory is None:
+            return False
+    
+        # use wave 3, swap_items(self, other_vendor, my_item, their_item)
+        self.swap_items(other_vendor, they_want_the_best_item_in_my_inventory, i_want_th_best_item_in_their_inventory)
+        return True
+    
+
+
+
+
