@@ -106,7 +106,7 @@ class Vendor:
         # which is the item the vendor wants
         i_want_th_best_item_in_their_inventory =  other_vendor.get_best_by_category(my_priority)
 
-
+        # no items matched, swap did not happen 
         if they_want_the_best_item_in_my_inventory is None or i_want_th_best_item_in_their_inventory is None:
             return False
     
