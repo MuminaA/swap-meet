@@ -19,7 +19,7 @@ class Item:
 
 # WAVE 3
     def __str__(self):
-        return (f"An object of type Item with id {self.id}.")
+        return f"An object of type {self.__class__.__name__} with id {self.id}."
 
 # WAVE 5
     def condition_description(self):
@@ -32,5 +32,10 @@ class Item:
             4: 'heavily used',
             5: 'vintage survivor',
         }
+
+        try:
+            key = round(self.condition)
+        except TypeError:
+            key = self.condition
         # Check if self.condition is one of the keys in dic then return
-        return condition_of_item.get(self.condition, 'Unknown condition')
+        return condition_of_item.get(key, 'Unknown condition')
