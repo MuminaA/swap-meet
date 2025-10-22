@@ -19,7 +19,7 @@ class Item:
 
 # WAVE 3
     def __str__(self):
-        return f"An object of type {self.__class__.__name__} with id {self.id}."
+        return f"An object of type {self.get_category()} with id {self.id}."
 
 # WAVE 5
     def condition_description(self):
